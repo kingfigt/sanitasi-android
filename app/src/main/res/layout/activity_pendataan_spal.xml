@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#E8F5E9">
+
+    <View
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#2E7D32" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="MONITORING JARINGAN SPAL"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nav_bar_bawah"
+        android:layout_below="@id/header_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FORM SAMBUNGAN RUMAH TANGGA\nKE IPAL TERPUSAT / KOLEKTIF"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kelurahan / Kecamatan:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_kelurahan_spal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_input_elegant"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat Jalan / Lingkungan:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <Spinner
+                android:id="@+id/spinner_alamat_jalan_spal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_input_elegant"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="6dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RT:"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+                    <Spinner
+                        android:id="@+id/spinner_rt_spal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_input_elegant" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="6dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RW:"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+                    <Spinner
+                        android:id="@+id/spinner_rw_spal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_input_elegant" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Identitas Rumah Tangga:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <EditText
+                android:id="@+id/etNoKKSpal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Nomor KK Warga (16 Digit)"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:background="@drawable/bg_input_elegant"
+                android:paddingHorizontal="15dp"
+                android:layout_marginBottom="12dp"
+                android:inputType="number"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:id="@+id/etNamaKepalaSpal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Nama Kepala Keluarga"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:background="@drawable/bg_input_elegant"
+                android:paddingHorizontal="15dp"
+                android:layout_marginBottom="16dp"
+                android:inputType="textPersonName|textCapWords"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status Sambungan Pipa Buangan:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgStatusSpal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+                <RadioButton android:id="@+id/rbTersambungIpal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tersambung ke IPAL Komunal Kota" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rbSpalLokal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sistem Pembuangan Mandiri / Rumah Sendiri" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rbBelumTersambung" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Belum Memiliki Saluran Pembuangan Standar" android:textColor="#000000" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kondisi Fisik Bak Kontrol Jaringan:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgKondisiBak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+                <RadioButton android:id="@+id/rbBakBagus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Berfungsi Baik" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rbBakTersumbat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tersumbat / Rusak" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dokumen Pendukung Warga:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btn_upload_dokumen_spal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih Foto KK / KTP"
+                    android:backgroundTint="#7F8C8D"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tv_nama_file_spal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Belum ada foto terpilih"
+                    android:textColor="#7F8C8D"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_preview_dokumen_spal"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="16dp"
+                android:background="#E5E8E8"
+                android:scaleType="centerInside"
+                android:visibility="gone"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titik Lokasi Manhole / Sambungan Rumah:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginBottom="25dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <org.osmdroid.views.MapView
+                    android:id="@+id/mapOSMSpal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnSimpanSpal"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="SIMPAN DATA SAMBUNGAN"
+                android:backgroundTint="#27AE60"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/nav_bar_bawah"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2E7D32"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout android:id="@+id/nav_rt" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_dialog_map" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sanitasi RT" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_komunal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_agenda" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Komunal" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_spal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_compass" app:tint="#FFFFFF" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SPAL" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_pelaporan" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_call" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pelaporan" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_riwayat" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_recent_history" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Riwayat" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout> </RelativeLayout>

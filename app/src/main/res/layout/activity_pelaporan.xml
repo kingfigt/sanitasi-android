@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#E8F5E9">
+
+    <View
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#2E7D32" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="MENU PELAPORAN MCK"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nav_bar_bawah"
+        android:layout_below="@id/header_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Identitas Laporan MCK Komunal"
+                android:textColor="#1A1A1A"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/et_nama_lokasi_lapor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_elegant"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rincian Deskripsi Kerusakan:"
+                android:textColor="#1A1A1A"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/et_deskripsi_laporan"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@drawable/bg_input_elegant"
+                android:gravity="top"
+                android:hint="Jelaskan detail keretakan dinding, pipa bocor, atau kendala fisik lainnya..."
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:inputType="textMultiLine|textCapWords"
+                android:importantForAutofill="no"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status Kelayakan Fungsi Jamban:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_kelayakan_jamban_lapor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+                <RadioButton android:id="@+id/rb_layak_lapor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Layak" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rb_tidak_layak_lapor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tidak Layak" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ketersediaan Air Bersih Pasokan MCK:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_air_bersih_lapor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+                <RadioButton android:id="@+id/rb_air_cukup" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cukup / Mengalir" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rb_air_kurang" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tidak Cukup / Macet" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kondisi Pembuangan / Tangki Septik:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_kondisi_pembuangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+                <RadioButton android:id="@+id/rb_pembuangan_baik" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Baik / Tertutup" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rb_pembuangan_buruk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Buruk / Meluap" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tingkat Kebersihan Bilik Sarana:"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_kebersihan_lapor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+                <RadioButton android:id="@+id/rb_bersih_lapor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bersih Terawat" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rb_kotor_lapor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kotor / Bau" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Butuh Intervensi / Perbaikan Struktur?"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_butuh_perbaikan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+                <RadioButton android:id="@+id/rb_perbaikan_ya" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ya, Mendesak" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rb_perbaikan_tidak" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tidak / Ringan" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bukti Foto / Dukung Kerusakan:"
+                android:textColor="#1A1A1A"
+                android:textStyle="bold"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="25dp"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btn_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#7F8C8D"
+                    android:text="AMBIL FOTO MCK"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tv_nama_file_spal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Belum ada foto bukti"
+                    android:textColor="#7F8C8D"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_simpan_laporan"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#3A86FF"
+                android:text="KIRIM DATA EVALUASI MCK"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/nav_bar_bawah"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2E7D32"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout android:id="@+id/nav_rt" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_dialog_map" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sanitasi RT" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_komunal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_agenda" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Komunal" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_spal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_compass" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SPAL" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_pelaporan" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_call" app:tint="#FFFFFF" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pelaporan" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_riwayat" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_recent_history" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Riwayat" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout> </RelativeLayout>

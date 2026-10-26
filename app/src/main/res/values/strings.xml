@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">sanitasi</string>
+
+    <string name="pilih_jml_penghuni">Pilih Jumlah Penghuni</string>
+    <string name="pilih_jarak_air">Pilih Jarak Sumber Air</string>
+
+    <string-array name="kelurahan_mojoroto">
+        <item>Tidak ada</item>
+        <item>Mojoroto</item>
+        <item>Sukorame</item>
+        <item>Pojok</item>
+        <item>Ngampel</item>
+        <item>Mrican</item>
+        <item>Dermo</item>
+        <item>Lirboyo</item>
+        <item>Campurejo</item>
+        <item>Tamanan</item>
+        <item>Bandar Kidul</item>
+        <item>Bandar Lor</item>
+        <item>Bujel</item>
+        <item>Gayam</item>
+    </string-array>
+</resources>
+

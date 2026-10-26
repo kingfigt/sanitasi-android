@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#E8F5E9">
+
+    <RelativeLayout
+        android:id="@+id/header_area"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#2E7D32"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="RIWAYAT PENDATAAN SANITASI"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05" />
+
+        <ImageView
+            android:id="@+id/btn_logout"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_lock_power_off"
+            app:tint="#FFCDD2"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Logout" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_area"
+        android:layout_above="@+id/nav_bar_bawah">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_riwayat_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:clipToPadding="false" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_bar_bawah"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2E7D32"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout android:id="@+id/nav_rt" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_dialog_map" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sanitasi RT" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_komunal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_agenda" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Komunal" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_spal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_compass" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SPAL" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_pelaporan" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_call" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pelaporan" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_riwayat" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_recent_history" app:tint="#FFFFFF" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Riwayat" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

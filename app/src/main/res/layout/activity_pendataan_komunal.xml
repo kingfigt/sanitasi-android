@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#E8F5E9">
+
+    <!-- HEADER MENU -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#2E7D32"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_menu"
+            app:tint="#FFFFFF"
+            android:contentDescription="Menu" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="PENDATAAN SANITASI KOMUNAL"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- FORM INPUT SCROLLABLE -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nav_bar_bawah"
+        android:layout_below="@id/header"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- SEKTOR 1: DATA WILAYAH -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Wilayah Komunal"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Pilih Kelurahan"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <Spinner
+                android:id="@+id/spinner_kelurahan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_input_elegant" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Pilih Jalan / Lingkungan Kampung"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <Spinner
+                android:id="@+id/spinner_alamat_jalan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_input_elegant" />
+
+            <!-- INPUT RT & RW HORIZONTAL -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pilih RT"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                    <Spinner
+                        android:id="@+id/spinner_rt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_input_elegant" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pilih RW"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                    <Spinner
+                        android:id="@+id/spinner_rw"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/bg_input_elegant" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Kode Pos Wilayah"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <EditText
+                android:id="@+id/et_detail_no_rumah"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_input_elegant"
+                android:hint="Kode Pos Otomatis..."
+                android:textColor="#000000"
+                android:textColorHint="#7F7F7F"
+                android:paddingHorizontal="15dp"
+                android:focusable="false"
+                android:clickable="false"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+
+
+            <!-- SEKTOR 2: SPESIFIKASI FASILITAS -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Spesifikasi Fasilitas Komunal"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Nama Fasilitas Komunal"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <EditText
+                android:id="@+id/et_nama_fasilitas"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_input_elegant"
+                android:hint="Masukkan Nama Fasilitas..."
+                android:textColor="#000000"
+                android:textColorHint="#7F7F7F"
+                android:paddingHorizontal="15dp"
+                android:inputType="text|textCapWords" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Jenis Sarana Komunal"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <Spinner
+                android:id="@+id/spinner_jenis_komunal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_input_elegant" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Jumlah Bilik Mandi"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <Spinner
+                android:id="@+id/spinner_bilik_mandi"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_input_elegant" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Jumlah WC / Kakus"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <Spinner
+                android:id="@+id/spinner_jumlah_kakus"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_input_elegant" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Jarak Aman ke Sumber Air Bersih"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <Spinner
+                android:id="@+id/spinner_jarak_air_komunal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bg_input_elegant" />
+
+
+            <!-- SEKTOR 3: KONDISI FISIK, AIR & KELAYAKAN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Kondisi Fisik &amp; Air Balai Komunal"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Kondisi Bangunan Fisik"
+                android:textColor="#000000" />
+            <RadioGroup
+                android:id="@+id/rg_kondisi_fisik_komunal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <RadioButton android:id="@+id/rb_fisik_aman" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Aman" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rb_fisik_rusak" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rusak Ringan/Berat" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Suplai Saluran Air Bersih"
+                android:textColor="#000000" />
+            <RadioGroup
+                android:id="@+id/rg_air_komunal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <RadioButton android:id="@+id/rb_air_lancar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lancar" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rb_air_mampet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Macat / Keruh" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Status Kelayakan Akhir"
+                android:textColor="#000000" />
+            <RadioGroup
+                android:id="@+id/rg_kelayakan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <RadioButton android:id="@+id/rb_layak" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Layak" android:textColor="#000000" />
+                <RadioButton android:id="@+id/rb_tidak_layak" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tidak Layak" android:textColor="#000000" android:layout_marginStart="15dp" />
+            </RadioGroup>
+
+
+            <!-- SEKTOR 4: MAPS GEOTAGGING -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Lokasi Geotagging Sarana"
+                android:textStyle="bold"
+                android:textColor="#333333" />
+
+            <org.osmdroid.views.MapView
+                android:id="@+id/map_view"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp" />
+
+            <!-- ACTION ACTION BUTTON -->
+            <Button
+                android:id="@+id/btn_simpan"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#007AFF"
+                android:text="SIMPAN DATA KOMUNAL"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM NAV MENUS -->
+    <LinearLayout
+        android:id="@+id/nav_bar_bawah"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2E7D32"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout android:id="@+id/nav_rt" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_dialog_map" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sanitasi RT" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_komunal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_agenda" app:tint="#FFFFFF" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Komunal" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_spal" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_compass" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SPAL" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_pelaporan" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_call" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pelaporan" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/nav_riwayat" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@android:drawable/ic_menu_recent_history" app:tint="#A5D6A7" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Riwayat" android:textColor="#A5D6A7" android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
